@@ -21,8 +21,4 @@ for d in */ ; do
 		cd ..
 	fi
 done
-echo "update keepass..."
-cd /c/Users/bsperrha/OneDrive\ -\ Otto\ Group/Dokumente/keypass/keyverwaltung
-git pull --rebase
-cd /c/dev/productservices/
 exit 0
