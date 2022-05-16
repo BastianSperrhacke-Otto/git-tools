@@ -14,10 +14,12 @@ for d in */ ; do
 		echo "git pull for $d"
 		cd $d
 		if ! git pull --rebase; then
-			"git pull for $d NOT SUCCESSFUL"
-			cd ..
-			exit 8
+			echo "==========================================="
+			echo "==========git pull for $d NOT SUCCESSFUL================"
+			echo "==========================================="
+			#exit 8
 		fi
+		git submodule foreach git pull origin master || true
 		cd ..
 	fi
 done
