@@ -13,6 +13,7 @@ for d in */ ; do
 	else
 		echo "git pull for $d"
 		cd $d
+		echo "current branch is $(git branch --show-current)"
 		if ! git pull --rebase; then
 			echo "==========================================="
 			echo "==========git pull for $d NOT SUCCESSFUL================"
