@@ -5,7 +5,7 @@ then
     rootfolder="./"
 fi
 cd $rootfolder
-ignoreFolders=("\$Recycle.Bin/") #separate with space
+ignoreFolders=("\$Recycle.Bin/")
 for d in */ ; do
 	[ -L "${d%/}" ] && continue
 	if [[ " ${ignoreFolders[*]} " == *" $d "* ]]; then
