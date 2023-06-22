@@ -15,9 +15,9 @@ for d in */ ; do
 		cd $d
 		echo "current branch is $(git branch --show-current)"
 		if ! git pull --rebase; then
-			echo "==========================================="
-			echo "==========git pull for $d NOT SUCCESSFUL================"
-			echo "==========================================="
+			echo "`tput setaf 1`==========================================="
+			echo "`tput setaf 1`==========git pull for $d NOT SUCCESSFUL================"
+			echo "`tput setaf 1`==========================================="
 			#exit 8
 		fi
 		git submodule foreach git pull origin master || true
