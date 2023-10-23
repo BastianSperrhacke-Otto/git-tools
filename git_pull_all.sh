@@ -13,7 +13,12 @@ for d in */ ; do
 	else
 		echo "git pull for $d"
 		cd $d
-		echo "current branch is $(git branch --show-current)"
+		currentBranch=$(git branch --show-current)
+		if [[ "$currentBranch" == "master" ]]; then
+		  echo "current branch is $currentBranch"
+    else
+      echo "`tput setaf 1`current branch is not master, it is $currentBranch"
+		fi
 		if ! git pull --rebase; then
 			echo "`tput setaf 1`==========================================="
 			echo "`tput setaf 1`==========git pull for $d NOT SUCCESSFUL================"
